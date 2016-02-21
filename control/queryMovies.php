@@ -29,7 +29,7 @@ foreach (array_keys($results) as $key){ //filter the data needed
 			$personArray =
 			array ($profilePhoto, 
 				$results[$key]['name'], //name of the artist
-				'<a href="../tmdb-test/view/viewMoviesByActor.php?personId='.$results[$key]['id'].'" target="_blank">List of movies</a>'
+				'<a href="../view/viewMoviesByActor.php?personId='.$results[$key]['id'].'" target="_blank">List of movies</a>'
 		);
 		array_push($peopleArray, $personArray);
 }
