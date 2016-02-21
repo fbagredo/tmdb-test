@@ -13,9 +13,9 @@ class TheMovieDB {
 	
 	private $curlConn;
 	
-	static function createConnection($query, $values){
+	static function createConnection($query, $values, $sortBy=NULL,$page=NULL){
 		$curlConn = curl_init();
-		curl_setopt($curlConn, CURLOPT_URL, $query.$values.TheMovieDB::$strApiKey);
+		curl_setopt($curlConn, CURLOPT_URL, $query.$values.$page.$sortBy.TheMovieDB::$strApiKey);
 		curl_setopt($curlConn, CURLOPT_RETURNTRANSFER, TRUE);
 		curl_setopt($curlConn, CURLOPT_HEADER, FALSE);
 		curl_setopt($curlConn, CURLOPT_HTTPHEADER, array("Accept: application/json"));
@@ -28,12 +28,11 @@ class TheMovieDB {
 	public function getPersonByName($name){
 		$response = TheMovieDB::createConnection(TheMovieDB::$strQueryPerson, $name);
 		$JSONResponse = json_decode($response, true);
-		print_r($JSONResponse);
 		return $JSONResponse;
 	}
 	
-	public function getMoviesByPerson($idPerson){
-		$response = TheMovieDB::createConnection(TheMovieDB::$strQueryMovies, $idPerson);
+	public function getMoviesByPerson($idPerson,$sortBy=NULL,$page=NULL){
+		$response = TheMovieDB::createConnection(TheMovieDB::$strQueryMovies, $idPerson,$sortBy,$page);
 		return json_decode($response, true);
 	}
 }

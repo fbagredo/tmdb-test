@@ -9,6 +9,7 @@ var app = angular.module('queryMovies', []);
 
 app.controller("QueryMoviesCtrl", ['$scope', '$http', function($scope, $http) {
         $scope.url = 'control/queryMovies.php';
+        var table;
 
         $scope.formsubmit = function(isValid) {
 
@@ -18,7 +19,15 @@ app.controller("QueryMoviesCtrl", ['$scope', '$http', function($scope, $http) {
                         success(function(data, status) {
                             $scope.status = status;
                             $scope.data = data;
-                            $scope.result = data; 
+                            
+                            if ( $.fn.dataTable.isDataTable( '#datatable' ) ) 
+                            	table.destroy();
+                            
+                            table = $('#datatable').DataTable( {
+                                "ajax": 'ajax/results.txt'
+                            } );
+                            
+
                         })
             }else{
                 
