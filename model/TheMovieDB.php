@@ -13,6 +13,12 @@ class TheMovieDB {
 	
 	private $curlConn;
 	
+	/*Create a connection
+	 * Params: $query: sting to query the movieDB
+	 * 		   $values: values to quering
+	 *         $sortby: optional
+	 *         $page: optional, number of the page returned
+	 */
 	static function createConnection($query, $values, $sortBy=NULL,$page=NULL){
 		$curlConn = curl_init();
 		curl_setopt($curlConn, CURLOPT_URL, $query.$values.$page.$sortBy.TheMovieDB::$strApiKey);
