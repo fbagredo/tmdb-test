@@ -12,6 +12,7 @@ $data = json_decode($post_date);
 
 $movieDB = new TheMovieDB();
 
+//query the list of movies
 $movie = $movieDB->getMoviesByPerson($data->idPerson,'&sort_by=release_date.desc');
 $movies = $movie['results'];
 
