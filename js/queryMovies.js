@@ -24,7 +24,10 @@ app.controller("QueryMoviesCtrl", ['$scope', '$http', function($scope, $http) {
                             	table.destroy();
                             
                             table = $('#datatable').DataTable( {
-                                "ajax": 'ajax/results.txt'
+                                "ajax": 'ajax/results.txt',
+                                stateSave: true,
+                                "bProcessing": true,
+                                "cache":true
                             } );
                             
 

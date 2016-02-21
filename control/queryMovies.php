@@ -29,7 +29,7 @@ foreach (array_keys($results) as $key){
 			$personArray =
 			array ($profilePhoto,
 				$results[$key]['name'],
-				'<a href="../view/viewMoviesByActor.php?personId='.$results[$key]['id'].'">List of movies</a>'
+				'<a href="../view/viewMoviesByActor.php?personId='.$results[$key]['id'].'" target="_blank">List of movies</a>'
 		);
 		array_push($peopleArray, $personArray);
 }

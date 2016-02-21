@@ -35,7 +35,8 @@ foreach (array_keys($movies) as $key){
 	$movieArray =
 	array ($posterPhoto,
 			$movies[$key]['release_date'],
-			$movies[$key]['title']
+			$movies[$key]['title'],
+			$movies[$key]['overview']
 	);
 	array_push($moviesArray, $movieArray);
 }
@@ -52,16 +53,18 @@ if ($numberMovies == 0)
 		echo '<table id="datatable" class="display" cellspacing="0" width="100%">
             	<thead>
             		<tr>
-                	<th></th>
+                	<th>Poster</th>
                 	<th>Release date</th>
-                	<th>Movie</th>
+                	<th>Movie title</th>
+					<th>Overview</th>
             		</tr>
         		</thead>
         		<tfoot>
             		<tr>
-                	<th></th>
+                	<th>Poster</th>
                 	<th>Release date</th>
-                	<th>Movie</th>
+                	<th>Movie title</th>
+					<th>Overview</th>
             		</tr>
         		</tfoot>
 			</table>';
