@@ -18,7 +18,7 @@ app.controller("QueryMoviesCtrl", ['$scope', '$http', function($scope, $http) {
                 $http.post($scope.url, {"name": $scope.name}).
                         success(function(data, status) {
                             $scope.status = status;
-                            $scope.data = data;
+                            $('#table').html(data);
                             
                             if ( $.fn.dataTable.isDataTable( '#datatable' ) ) 
                             	table.destroy();

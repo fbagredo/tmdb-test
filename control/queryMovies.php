@@ -41,4 +41,21 @@ fclose($fp);
 
 if ($numberPeople == 0)
 	echo 'No actor or actresess found \n';
+else
+	echo '<table id="datatable" class="display" cellspacing="0" width="100%">
+            	<thead>
+            		<tr>
+                	<th></th>
+                	<th>Actor</th>
+                	<th>View list of movies</th>
+            		</tr>
+        		</thead>
+        		<tfoot>
+            		<tr>
+                	<th></th>
+                	<th>Actor</th>
+                	<th>View list of movies</th>
+            		</tr>
+        		</tfoot>
+			</table>';
 ?>

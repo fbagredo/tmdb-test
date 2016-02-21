@@ -12,7 +12,7 @@
 	</head>
 
 	<body>
-	    <div ng-controller="QueryMoviesCtrl">
+	    <div ng-controller="QueryMoviesbyActor">
             <form  name="frmQueryMovies"  class="well form-search"   >
                 <input type="text" ng-model="name" class="input-medium search-query" placeholder="Name" required >
                 <button type="submit" class="btn" ng-click="formsubmit(frmQueryMovies.$valid)"  ng-disabled="frmQueryMovies.$invalid">Submit </button>
