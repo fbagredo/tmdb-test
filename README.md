@@ -1,2 +1,2 @@
 # tmdb-test
-A simple queries using the movie data base
+Simple queries using the movie data base
